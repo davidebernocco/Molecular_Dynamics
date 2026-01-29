@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from funct import load_data, dihedral_histogram
 from funct import data_KDE, dihedral_KDE
 
-
+"""
 # DIHEDRAL HISTOGRAMS
 angles_D2O_N = load_data("D2O", "N")
 histo_D2O_N = dihedral_histogram(angles_D2O_N, 300, 3.6, "D2O", "N")
@@ -21,7 +21,7 @@ angles_D2O_O_OXT_ext = data_KDE(angles_D2O_O_OXT)
 kde_D2O_O_OXT = dihedral_KDE(angles_D2O_O_OXT_ext, 300, "D2O", "O+OXT", 0.02)
 
 
-"""
+
 # RADIAL DISTRIBUTION FUNCTION:
 data_rdf_H = np.loadtxt("Data_Analysis_D2O/rdfD2O_HG_WD.xvg", comments=["@", "#"])
 r_rdf_H = data_rdf_H[:, 0]
@@ -30,7 +30,7 @@ g_rdf_H = data_rdf_H[:, 1]
 plt.plot(r_rdf_H, g_rdf_H, lw=2)
 plt.xlabel("Distance r (nm)")
 plt.ylabel("g(r)")
-plt.title("RDF: CYS HG - Water H")
+plt.title("(D2O) RDF: CYS HG - Water D")
 plt.tight_layout()
 plt.savefig("images_D2O/rdf_HG_WD.png", dpi=300)
 plt.close()
@@ -42,9 +42,21 @@ g_rdf_S = data_rdf_S[:, 1]
 plt.plot(r_rdf_S, g_rdf_S, lw=2)
 plt.xlabel("Distance r (nm)")
 plt.ylabel("g(r)")
-plt.title("RDF: CYS SG - Water O")
+plt.title("(D2O) RDF: CYS SG - Water O")
 plt.tight_layout()
 plt.savefig("images_D2O/rdf_SG_WO.png", dpi=300)
 plt.close()
-
 """
+
+# POTENTIAL ENERGY TIME EVOLUTION:
+data = np.loadtxt("Data_Analysis_D2O/potential_D2O.xvg", comments=["@", "#"])
+
+time = data[:, 0]   # ps
+pot_en = data[:, 1]  # degrees
+
+plt.plot(time, pot_en)
+plt.xlabel("Time (ps)")
+plt.ylabel("Potential energy D2O (KJ/mol)")
+plt.tight_layout()
+plt.savefig("images_D2O/pot_energy_D2O.png", dpi=300)
+plt.close()
