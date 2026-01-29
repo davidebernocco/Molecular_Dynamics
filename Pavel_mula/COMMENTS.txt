@@ -1,0 +1,7 @@
+Since the free energy profiles - such as the ones obtained from -kb*T*log(P(potential_energy)) - are equivalent up to some small ammount of noise, this can have two final consequences:
+-> Pavel's method does not work in this context and it cannot capture the truely essence of quantum nuclear effects due to isotopic substitution in water.
+-> It could take a larger system (i.e. more cysteine solvated molecules) to see a substantial difference between the two free energy lanscapes.
+
+Because of the relatively limited time we have at our disposal before the end of the thesis, we stop here our efforts on the problem and pass to an alternative method to include the quantum behaviour in the system.
+
+However, we don't exclude a priori the possibility to come back in the future to this first problem and simulate a box of water (H2O and D2O) with more then one cysteine and prove more decisively the correctness of Pavel approach.
